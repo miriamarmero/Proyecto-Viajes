@@ -1,8 +1,12 @@
 const CONN = require('../helpers/dbConnection');
 
+//Controlador que devuelve una promesa
 function getDestinos(){
+    // Creamos una promesa y la devolvemos
     return new Promise((resolve, reject) => {
+        // Hacemos la lllamada a la bbdd
         CONN.query('SELECT * FROM destinos', (err, rows) => {
+            // Cuando la bbdd nos devuelva los datos resolvemos la promesa
             resolve(rows);
         })
     })

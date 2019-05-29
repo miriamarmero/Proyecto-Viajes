@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var filmsRouter = require('./routes/films');
+var destinosRouter = require('./routes/destinos'); // Router de destinos importado
+var destinosApiRouter = require('./routes/api/destinosApi'); //Router de la API destinos importado
+
 var app = express();
 
 // view engine setup
@@ -21,7 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/puntoDeAcceso', filmsRouter);
+app.use('/destinos', destinosRouter); // Ruta para web destinos
+app.use('/api/destinos', destinosApiRouter); // Ruta para api destinos
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
