@@ -1,3 +1,18 @@
-{{#each destinos}}
-    <h2>{{destino}}</h2>
-{{/each}}
+<h1>{{userName}}</h1>
+<div class="container">
+  <div class="row">
+    {{#each destinos}}
+      <div class="col-md-6 col-sm-12 mt-4">
+        <div class="card bg-dark text-white">
+          <img src="{{ruta_imagen}}" class="card-img">
+          <div class="card-img-overlay">
+            <h2 class="card-title">{{destino}}</h2>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">{{precio}}€</p>
+          </div>
+        </div>
+      </div>
+    {{!-- <h2>{{destino}}</h2> --}}
+    {{/each}}
+  </div>
+</div>
